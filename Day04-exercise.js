@@ -22,7 +22,6 @@ function loopNumber (n) {
 }; 
 loopNumber(30);
 
-
 // Question 3: Create BMI Index
 function createBmiIndex (weight, height){
     let bmiIndex = (weight / (height * height))

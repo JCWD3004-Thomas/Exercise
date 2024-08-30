@@ -54,6 +54,12 @@ console.log(string);
 // Question 6: Capitalize First Letter - to be fixed
 // let noncapital = "hello world";                 //Hint: for loop on H and W
 
+// let noncapital = "hello world";
+// let capitalize = 
+
+// noncapital.toUpperCase()
+
+
 
 // Question 7: Swap Case for each Character from String - to be fixed
 // e.g The QuiCk BrOwN Fox’ -> ‘ tHE qUIcK bRoWn fOX’
@@ -78,6 +84,13 @@ if(num1 > num2){
 let numVar1 = 42;
 let numVar2 = 27;
 let numVar3 = 18;
+
+// if(numVar 1 > numVar2 && numVar3){
+//     console.log
+// }
+
+
+
 
 
 // Question 10: 1 = input is string; 2 = input is a number; 3 = for other types
@@ -107,3 +120,64 @@ if(typeof input === "string"){
 //To be fixed 4,6,7,9,11
 
 //Teacher Solution//
+
+//--Solution Question 3 = Check Palindrome
+let targetStr = "madam"
+let isPalindrome = true;            // Kalo true != kalo false == logicnya
+let start = 0;                          
+let end = targetStr.length - 1;     // Nentuin batas akhir index e.g 0,1,2,3,4 (- 1) = 4
+                                    // -1 buat ngecek index terakhir
+while (start < end){                            // [i] only index [start]/[end]  
+    if(targetStr[start] !== targetStr[end]){    // m !== (negation/tidak sama dengan) m
+        isPalindrome = false;                   // check if palindrome true/false
+        break;
+    }
+    start++;                        //for the looping start ++ end--
+    end--;                          //checks m, checks a, d, etc...
+}
+console.log(isPalindrome ? "Palindrome" : "Not a palindrome");
+
+
+//--Solution Question 4 = Convert Number to Currency
+let targetNumber = 1000;
+let convertedtoRupiah = "Rp. " + (targetNumber / 1000).toFixed(3).replace(".",",") + ",00";
+console.log(convertedtoRupiah);
+
+//--Solution Question 6 = Capitalize First Word
+
+let targetCapitalize = "hello world";
+let resultCapitalize = "";
+
+for(let i = 0; i < targetCapitalize.length; i++){
+    if(i === 0 || targetCapitalize[i - 1] === " "){     // i or target
+        resultCapitalize += targetCapitalize[i].toUpperCase();
+    } else {
+        resultCapitalize += targetCapitalize[i];
+    }
+}
+console.log(resultCapitalize);
+
+// if i === 0 or target capitalize [i-1]=== blank " "
+// kalau bukan first index i === 0 atau target cap lanjut ke else
+// pas sampai next word, targetCapitalize condition triggered which give space " ",
+// terus lanjut next loop World ke trigger condition i = 0
+
+//-- Solution Question 7 = convert uppercase to lowercase, lowercase to uppercase
+
+// let targetConvert = "The QuiCk BrOwN Fox";
+// let result = "";
+
+// for(let i = 0; i < targetConvert.length; i++){
+//     if(targetConvert[i] >= "a" && targetConvert[i] <= "z"){
+//         result += targetConvert[i].toUpperCase();
+//     } else if(targetConvert[i] >= "A" && targetConvert[i] <= "Z"){
+//         result += targetConvert[i].toLowerCase();
+//     } else(
+//         result += targetConvert[i]);
+// }
+// console.log(result);
+
+// if = this staetement search lowercase a until lowercase z and turn them to uppercase
+// else if = this statement search uppercase A and uppercase Z and turn them to lowercase
+// if elif else = have to include all block statement
+
