@@ -58,6 +58,7 @@ function selectEvenNumber (i){
     for (let index of i) {
         if (index % 2 == 0){
             arrayEvenNum.push(index);
+            //arrayEvenNum[arrayEvenNum.length] = arr[i];
         }
     } 
     return arrayEvenNum;
@@ -65,6 +66,23 @@ function selectEvenNumber (i){
 
 // Question 5: Function to split string and convert to array of words
 
+function splitStringtoArray (str) {
+    let results = [];
+    let word = "";
+    for (let i = 0; i <= str.length; i++) {
+        if (str[i] === " " || i === str.length) {
+            results[results.length] = word;
+            word = "";
+        } else {
+            word+=str[i];
+        }      
+    }
+    return results;
+}
+const str = "Hello World";
+console.log(splitStringtoArray(str));
+
+//In Built Method
 let stringVar = "Hello World"
 let arrayStringVar = [];
 function splitString (str) {
