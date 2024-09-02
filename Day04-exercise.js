@@ -1,8 +1,19 @@
 //Day 04 Exercise
 
-// Question 1: Create Function Triangle Pattern - to be fixed
+// Question 1: Create Function Triangle Pattern 
+function createTriangle(height){
+    let number = 1;
+    for (let i = 1; i <= height; i++){
+        let row = "";
+        for (let j = 1; j <= i; j++){
+            row += (number < 10 ? "0" : "") + number + " ";
+            number++;
+        }
+        console.log(row);
+    }
+}
+createTriangle(4);
 
-// function trianglePattern (n) {
 
 
 // Question 2: Funciion that can loop number of times according to input
