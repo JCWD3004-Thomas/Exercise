@@ -38,20 +38,32 @@ function calculatePos(arrayPos1, arrayPos2) {
 // console.log(calculatePos(arrayPos1, arrayPos2));
 
 // Question 5: Function -> add an element to an array, Howver only add if it is not in the array
-let newArray = [1, 2, 3, 4];      // newElement 4 = [1, 2, 3, 4]
-let newElementNum = 7;            // newElement 7 = [1, 2, 3, 4, 7]
-function newElement(newArray){
-    for(let i = 0; i < newArray.length; i++){
-        if(newArray[i] === newElementNum){
-            console.log("Number " + newElementNum + " is already in array.");
-            break;
-        }
+// let newArray = [1, 2, 3, 4];      // newElement 4 = [1, 2, 3, 4]
+// let newElementNum = 7;            // newElement 7 = [1, 2, 3, 4, 7]
+// function newElement(newArray){
+//     for(let i = 0; i < newArray.length; i++){
+//         if(newArray[i] === newElementNum){
+//             console.log("Number " + newElementNum + " is already in array.");
+//             break;
+//         }
+//     }
+//     newArray.push(newElementNum)
+//     // console.log(newElementNum);      //check if newElementNum is already in array
+// } 
+// // newElement(newArray);
+// // console.log(newArray);
+
+//Question 5 (Teacher Solution) = using arr.indexof
+function addUniqueElement(arr, newElement) {
+    if(arr.indexOf(newElement) === -1) {        //-1 = represntasi ketiadaan
+        arr.push(newElement);
     }
-    newArray.push(newElementNum)
-    // console.log(newElementNum);      //check if newElementNum is already in array
-} 
-// newElement(newArray);
-// console.log(newArray);
+    return arr;
+}
+const newElement = 7;
+const arr = [1, 2, 3, 4];
+console.log(addUniqueElement(arr, newElement));
+
 
 // Question 6: Function -> Return the sum of mixed data types in an array
 let mixedArray1 = ["3", 1, "string", null, false, undefined, 2] // answer is 3
@@ -110,7 +122,7 @@ function duplicateInArray(duplicateArr, duplicateArr2){
             duplicateValues.push(duplicateArr[i]);
     } return duplicateValues;
 }
-console.log(duplicateInArray(duplicateArr, duplicateArr2));
+// console.log(duplicateInArray(duplicateArr, duplicateArr2));
 
 // Question 10: Function -> Find difference in 2 given arrays
 let arr1 = [1, 2, 3, 4, 5];
@@ -124,4 +136,27 @@ function differenceInArray(arr1, arr2){
             diff.push(arr1[i]);
     } return diff;
 }
-console.log(differenceInArray(arr1, arr2));
+// console.log(differenceInArray(arr1, arr2));
+
+// Question 12: Function -> array return sum of duplicate values
+function sumOfDuplicates(arr){
+    let sum = 0;
+    let seen = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        if(seen[arr[i]]) {
+            seen[arr[i]]++;         //FLAG count
+            // console.log(seen);   //count +1 everytime pass through a number
+        } else {                    //key = 10,20,30,40,50,60
+            seen[arr[i]] = 1;       //seen = counternya
+        }
+    }
+    for (let key in seen) {
+        if(seen[key] > 1) {
+            sum += Number(key) * seen[key];
+        }
+    }
+    return sum;
+}
+let arrayVar = [10, 20, 40, 10, 50, 30, 10, 60, 10];
+console.log(sumOfDuplicates(arrayVar));
