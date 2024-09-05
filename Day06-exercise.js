@@ -1,11 +1,10 @@
 //Day 06 - Exercise
 
 
-// Exercise 1 
+// Question 1: Calculate Array of Student (Score & Age)
+
 // Create Function calculate Array of Student Data
 // Name -> String, Email -> String, Age -> Date, Score -> Number
-
-// Question 1 : Calculate Array of Student (Score & Age)
 
 function calculateStudentData (students) {
     let totalScore = 0;
@@ -113,7 +112,4 @@ transaction.addToCart(product2, 3)
 transaction.showTotal();
 
 console.log(transaction.checkout());
-
-
-
 
