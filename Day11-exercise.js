@@ -161,5 +161,3 @@ function climbStairs(n) {
 // console.log(climbStairs(3));
 // console.log(climbStairs(4));
 // console.log(climbStairs(5));
-
-
